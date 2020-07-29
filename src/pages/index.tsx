@@ -5,17 +5,9 @@ import { play } from "../components/play"
 
 type Arr = Array<Array<boolean>>
 
-let arr: Arr = []
-
 let size = 35
 
-for (let index = 0; index < size; index++) {
-  let temp = []
-  for (let tmp = 0; tmp < size; tmp++) {
-    temp.push(false)
-  }
-  arr.push(temp)
-}
+const arr: Arr = new Array(size).fill(Array(size).fill(false))
 
 const index = () => {
   const [cells, setCells]: [Array<Array<boolean>>, any] = useState([...arr])
